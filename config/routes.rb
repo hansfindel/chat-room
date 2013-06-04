@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :rooms do
+    member do
+      post "chat"
+      get "events"
+    end
+  end
+
   get "session/new"
   
   get "log_out" => "sessions#destroy", :as => "log_out"

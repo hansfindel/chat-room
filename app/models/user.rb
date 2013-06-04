@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
   validates_presence_of :email
   validates_uniqueness_of :email
   
+  has_many :rooms
+  has_many :chats
+
   def self.authenticate(email, password)
   	user = User.fetch(email)
     if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
@@ -27,12 +30,16 @@ class User < ActiveRecord::Base
   end
 
   def self.fetch(data)
-  	if data && thing.include?("@")
+  	if data && data.include?("@")
  		#user = User.where("email like ?",thing.downcase).first
- 		user = find_by(email: email)
+ 		user = find_by(email: data)
  	elsif thing
- 		user = User.find_by(username: thing).first
+ 		user = User.find_by(username: data).first
  	end
  	user
+  end
+
+  def name
+    [first_name.to_s, last_name.to_s].join(" ")
   end
 end

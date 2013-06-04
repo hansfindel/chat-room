@@ -1,0 +1,25 @@
+<p>
+  <strong>Name:</strong>
+  <%= @room.name %>
+</p>
+
+<p>
+  <strong>Topic:</strong>
+  <%= @room.topic %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @room.user_id %>
+</p>
+
+<div class="chat_room">
+	<div class="messages" data-url="<%= events_room_path(@room) %>">
+		<%= render "messages", rows: @room.chats %>
+	</div>
+	<div class="new_message">
+		<%= render "chat_form" %>
+	</div>
+</div>
+
+<%= link_to 'Back', rooms_path %>

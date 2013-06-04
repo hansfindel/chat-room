@@ -11,3 +11,8 @@
  *= require_self
  *= require_tree .
  */
+
+
+.content{
+	padding: 10px 40px 0px 40px;
+}

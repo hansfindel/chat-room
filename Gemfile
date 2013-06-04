@@ -5,6 +5,7 @@ gem 'arel',      github: 'rails/arel'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem 'redis'
 
 # Use edge version of sprockets-rails
 gem 'sprockets-rails', github: 'rails/sprockets-rails'
@@ -41,7 +42,9 @@ gem "bcrypt-ruby", :require => "bcrypt"
 
 # Use unicorn as the app server
 # gem 'unicorn'
-gem 'thin'
+#gem 'thin' #not asynchronous
+gem 'puma'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
