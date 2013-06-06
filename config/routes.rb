@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "join_streams/index"
+  get "join_streams/counter"
   resources :blogs do 
     member do 
       post "comment"

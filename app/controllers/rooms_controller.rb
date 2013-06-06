@@ -43,17 +43,6 @@ class RoomsController < ApplicationController
       redis.quit
       response.stream.close
   end
-  #def events
-  #  response.headers["Content-Type"] = "text/event-stream"
-  #  3.times do |n|
-  #    response.stream.write "#{n}... \n"
-  #    sleep 2
-  #  end
-  #  rescue IOError
-  #    logger.info "Stream closed"
-  #  ensure
-  #    response.stream.close
-  #end
 
   # POST /rooms
   # POST /rooms.json
