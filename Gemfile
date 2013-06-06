@@ -12,7 +12,9 @@ group :production do
   gem 'pg'
 end
 
-gem 'redis'
+gem 'redis'  # streaming with notifications
+gem 'pusher' # pusher gem
+
 
 # Use edge version of sprockets-rails
 gem 'sprockets-rails', github: 'rails/sprockets-rails'

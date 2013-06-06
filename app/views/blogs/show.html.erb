@@ -8,7 +8,7 @@
   <%= @blog.content %>
 </p>
 
-<div class="blog" data-blog="<%= @blog.id %>">
+<div class="blog" data-channel="blog_<%= @blog.id %>" data-key="<%= ENV["pusher_key"] %>">
 	<div class="messages">
 		<%= render "comments", comments: @blog.comments %>
 	</div>

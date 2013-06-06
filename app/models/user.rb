@@ -34,12 +34,12 @@ class User < ActiveRecord::Base
 
   def self.fetch(data)
   	if data && data.include?("@")
- 		#user = User.where("email like ?",thing.downcase).first
- 		user = find_by(email: data)
- 	elsif data
- 		user = User.find_by(username: data)
- 	end
- 	user
+ 		  #user = User.where("email like ?",thing.downcase).first
+ 		  user = find_by(email: data)
+ 	  elsif data
+ 		  user = User.find_by(username: data)
+ 	  end
+ 	  user
   end
 
   def name

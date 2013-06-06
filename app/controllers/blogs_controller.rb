@@ -42,11 +42,13 @@ class BlogsController < ApplicationController
     @comment = @blog.comments.new(content: params[:content], user_id: current_user_id)
     respond_to do |format| 
       if @comment.save 
-        data = @blog.to_json
+        #Pusher[channel_id].trigger('event', {:message => 'data'})
+        channel = "blog_#{@blog.id}"
+        Pusher[channel].trigger('comment', {:content => @comment.content})
         #format.html { redirect_to @blog, notice: "Successfully commented" }
         format.js
       else
-        raise @comment.to_json.to_s
+        @comment.to_json.to_s
       end
     end
   end
