@@ -1,0 +1,14 @@
+<p>
+  <strong>Name:</strong>
+  <%= @forum.name %>
+</p>
+
+<div class="forum" data-forum="<%= @forum.id %>">
+	<div class="messages" data-url="<%= events_forum_path(@forum) %>">
+		<%= render "posts", posts: @forum.forum_posts %>
+	</div>
+	<div class="new_message">
+		<%= render "post_form" %>
+	</div>
+</div>
+<%= link_to 'Back', forums_path %>

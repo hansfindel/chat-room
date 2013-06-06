@@ -1,0 +1,21 @@
+<p>
+  <strong>Title:</strong>
+  <%= @blog.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @blog.content %>
+</p>
+
+<div class="blog" data-blog="<%= @blog.id %>">
+	<div class="messages">
+		<%= render "comments", comments: @blog.comments %>
+	</div>
+	<div class="new_message">
+		<%= render "comment_form" %>
+	</div>
+</div>
+<%= link_to 'Back', forums_path %>
+
+<%= link_to 'Back', blogs_path %>

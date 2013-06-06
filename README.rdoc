@@ -8,7 +8,7 @@ Things you may want to cover:
 * Ruby version
  ruby:  2.0.0
  rails: 4
- 
+
 * System dependencies
 
 * Configuration
@@ -16,7 +16,7 @@ Things you may want to cover:
 * Database creation
 
 * Database initialization
-  sqlDB + redis (start with redis start)
+ sqlDB + redis (start with redis start)
 
 * How to run the test suite
 

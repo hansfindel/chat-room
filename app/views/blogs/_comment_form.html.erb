@@ -1,9 +1,9 @@
-<%= form_tag chat_room_path(@room), remote: true do |f| %>
+<%= form_tag comment_blog_path(@blog), remote: true do |f| %>
   <div class="field">
     <%= label_tag :content %><br>
     <%= text_area_tag :content %>
   </div>
   <div class="actions">
-    <%= submit_tag "Send" %>
+    <%= submit_tag "Comment" %>
   </div>
 <% end %>

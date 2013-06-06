@@ -1,0 +1,7 @@
+<ul class="posts_list">
+	<% posts.each do |p| %>
+		<li class="post_<%= p.id %>">
+			<%= p.content %>
+		</li>
+	<% end %>
+</ul>

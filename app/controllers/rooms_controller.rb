@@ -31,6 +31,7 @@ class RoomsController < ApplicationController
     redis = Redis.new
     redis.psubscribe('chat.*') do |on|
       on.pmessage do |pattern, event, data|
+        #raise [pattern, event, data].join(" - ")
         logger.info "#{pattern} - #{event} - #{data}"
         response.stream.write("event: #{event}\n")
         response.stream.write("data: #{data}\n\n")
@@ -77,7 +78,8 @@ class RoomsController < ApplicationController
     @chat = Chat.create(content: params[:content], user_id: current_user_id, room_id: @room.id)
     data = @chat.to_json
     #data[:user] = @chat.user.name
-    $redis.publish('chat.add', data)
+    event_name = 'chat.add_' + @chat.room_id.to_s
+    $redis.publish(event_name, data)
   end
 
 

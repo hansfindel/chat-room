@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  resources :blogs do 
+    member do 
+      post "comment"
+    end
+  end
+
+  resources :forums do
+    member do 
+      post "post"
+      get "events"
+    end
+  end
+
   resources :rooms do
     member do
       post "chat"

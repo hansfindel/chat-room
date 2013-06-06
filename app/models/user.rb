@@ -12,6 +12,9 @@ class User < ActiveRecord::Base
   
   has_many :rooms
   has_many :chats
+  has_many :forum_posts
+  has_many :blogs
+  has_many :comments
 
   def self.authenticate(email, password)
   	user = User.fetch(email)
