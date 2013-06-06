@@ -27,3 +27,5 @@ jQuery ->
 				console.log("last: ", last_id)
 				if(Number(last_id) < Number(new_id))
 					$('.posts_list').append($("<li class=#{message_id}>").text("#{message}"))
+			else
+				$('.posts_list').append($("<li class=#{message_id}>").text("#{message}"))
