@@ -113,6 +113,7 @@ GEM
     minitest (5.0.3)
     multi_json (1.7.4)
     netrc (0.7.7)
+    pg (0.15.1)
     polyglot (0.3.3)
     puma (2.0.1)
       rack (>= 1.1, < 2.0)
@@ -160,6 +161,7 @@ DEPENDENCIES
   heroku
   jbuilder (~> 1.2)
   jquery-rails
+  pg
   puma
   rails!
   redis
