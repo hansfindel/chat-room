@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
  		#user = User.where("email like ?",thing.downcase).first
  		user = find_by(email: data)
  	elsif data
- 		user = User.find_by(username: data).first
+ 		user = User.find_by(username: data)
  	end
  	user
   end
