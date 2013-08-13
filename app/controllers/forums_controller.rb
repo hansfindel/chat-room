@@ -1,6 +1,7 @@
 class ForumsController < ApplicationController
   before_action :set_forum, only: [:show, :edit, :update, :destroy, :post, :events]
-
+  include ActionController::Live
+  
   # GET /forums
   # GET /forums.json
   def index
